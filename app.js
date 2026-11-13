@@ -116,9 +116,11 @@ const cameraMessage = document.querySelector("#camera-message");
 const cameraStartButton = document.querySelector("#camera-start");
 const cameraStopButton = document.querySelector("#camera-stop");
 const cameraSaveButton = document.querySelector("#camera-save");
+const cameraFullscreenButton = document.querySelector("#camera-fullscreen");
 const repCountOutput = document.querySelector("#rep-count");
 
 let activeStream = null;
+let cameraFullscreenFallback = false;
 let poseLandmarker = null;
 let poseLandmarkerPromise = null;
 let animationFrame = 0;
@@ -624,6 +626,41 @@ function setCameraMessage(message, kind = "") {
   cameraMessage.classList.toggle("success", kind === "success");
 }
 
+function syncCameraFullscreen() {
+  const isFullscreen = document.fullscreenElement === cameraFrame || cameraFullscreenFallback;
+  cameraFrame.classList.toggle("is-fullscreen", isFullscreen);
+  cameraFullscreenButton.textContent = isFullscreen ? "Exit full screen" : "Full screen";
+  cameraFullscreenButton.setAttribute("aria-label", isFullscreen ? "Exit camera full screen" : "View camera full screen");
+}
+
+async function toggleCameraFullscreen() {
+  if (document.fullscreenElement === cameraFrame) {
+    try {
+      await document.exitFullscreen();
+    } catch (error) {
+      console.error("Could not exit the camera full-screen view.", error);
+      setCameraMessage("Press Escape to leave the full-screen camera view.", "error");
+    }
+    return;
+  }
+  if (cameraFullscreenFallback) {
+    cameraFullscreenFallback = false;
+    syncCameraFullscreen();
+    return;
+  }
+  if (!cameraFrame.requestFullscreen) {
+    cameraFullscreenFallback = true;
+    syncCameraFullscreen();
+    return;
+  }
+  try {
+    await cameraFrame.requestFullscreen();
+  } catch (error) {
+    console.error("Could not open the camera full-screen view.", error);
+    setCameraMessage("Full-screen view could not be opened. Check your browser settings and try again.", "error");
+  }
+}
+
 function cameraExerciseKind() {
   return document.querySelector("#camera-exercise").value.toLowerCase().includes("push-up")
     ? "push-up"
@@ -913,6 +950,7 @@ async function startCamera() {
     repCountOutput.textContent = "0";
     cameraStopButton.disabled = false;
     cameraSaveButton.disabled = false;
+    cameraFullscreenButton.disabled = false;
     setCameraMessage("Tracker ready. Keep your full body in view and begin in the starting position.");
     animationFrame = requestAnimationFrame(detectFrame);
   } catch (error) {
@@ -943,9 +981,18 @@ function stopCamera() {
   }
   cameraVideo.srcObject = null;
   cameraFrame.classList.remove("is-live");
+  cameraFullscreenFallback = false;
+  if (document.fullscreenElement === cameraFrame) {
+    document.exitFullscreen().catch((error) => {
+      console.error("Could not exit the camera full-screen view.", error);
+      setCameraMessage("Press Escape to leave the full-screen camera view.", "error");
+    });
+  }
+  syncCameraFullscreen();
   angleSamples = [];
   cameraStopButton.disabled = true;
   cameraSaveButton.disabled = true;
+  cameraFullscreenButton.disabled = true;
   cameraStartButton.disabled = false;
   poseContext.clearRect(0, 0, poseCanvas.width, poseCanvas.height);
 }
@@ -1109,6 +1156,8 @@ function initialize() {
   cameraStartButton.addEventListener("click", startCamera);
   cameraStopButton.addEventListener("click", stopCamera);
   cameraSaveButton.addEventListener("click", saveCameraSet);
+  cameraFullscreenButton.addEventListener("click", toggleCameraFullscreen);
+  document.addEventListener("fullscreenchange", syncCameraFullscreen);
   document.querySelector("#camera-exercise").addEventListener("change", () => {
     cameraPhase = "unarmed";
     angleSamples = [];
