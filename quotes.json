@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "quotes": [
+    { "id": "welcome-01", "text": "A strong beginning can be as small as showing up today.", "category": "welcome" },
+    { "id": "welcome-02", "text": "You do not need a perfect plan to take a worthwhile first step.", "category": "welcome" },
+    { "id": "workout-01", "text": "Let each careful repetition be proof that patience has strength.", "category": "workout" },
+    { "id": "workout-02", "text": "Train with purpose; leave enough in reserve to return tomorrow.", "category": "workout" },
+    { "id": "workout-03", "text": "Craftsmanship is choosing clean form when speed would be easier.", "category": "workout" },
+    { "id": "comeback-01", "text": "The road back begins with one honest effort, not a perfect streak.", "category": "comeback" },
+    { "id": "comeback-02", "text": "A pause is part of the story; your next choice writes the next line.", "category": "comeback" },
+    { "id": "comeback-03", "text": "Return without shame. Begin again with what you have today.", "category": "comeback" },
+    { "id": "achievement-01", "text": "Honor earned through steady work is yours to carry forward.", "category": "achievement" },
+    { "id": "achievement-02", "text": "Celebrate the milestone, then meet the next day with humility.", "category": "achievement" },
+    { "id": "record-01", "text": "A new best is a marker on the path, not the measure of your worth.", "category": "record" },
+    { "id": "record-02", "text": "Improve with care; lasting strength is built, never rushed.", "category": "record" },
+    { "id": "goal-strength", "text": "Strength grows where effort is repeated with patience.", "category": "goal-strength" },
+    { "id": "goal-endurance", "text": "Endurance is a quiet promise kept one measured step at a time.", "category": "goal-endurance" },
+    { "id": "goal-mobility", "text": "Move well today so you can keep moving for years.", "category": "goal-mobility" },
+    { "id": "goal-consistency", "text": "Consistency is not flawless; it is the practice of returning.", "category": "goal-consistency" },
+    { "id": "strength-01", "text": "Self-mastery is strength guided by judgment.", "category": "strength" },
+    { "id": "strength-02", "text": "Courage is choosing the useful effort over the easy excuse.", "category": "strength" },
+    { "id": "endurance-01", "text": "Go at a pace you can honor again tomorrow.", "category": "endurance" },
+    { "id": "endurance-02", "text": "Resilience is built in the steady miles no one applauds.", "category": "endurance" },
+    { "id": "discipline-01", "text": "Discipline is built one kept promise at a time.", "category": "workout" },
+    { "id": "discipline-02", "text": "Let patience set the pace and persistence choose the direction.", "category": "workout" },
+    { "id": "honor-01", "text": "Keep your word to yourself with the same care you offer others.", "category": "consistency" },
+    { "id": "honor-02", "text": "Honor the work, respect recovery, and return ready.", "category": "workout" },
+    { "id": "craft-01", "text": "Small improvements, practiced well, become a craft.", "category": "strength" },
+    { "id": "craft-02", "text": "The patient builder outlasts the hurried one.", "category": "consistency" }
+  ]
+}

@@ -1,0 +1,126 @@
+:root {
+  --theme-glow: rgba(255, 184, 117, 0.6);
+  --theme-horizon: rgba(191, 108, 60, 0.25);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, var(--theme-glow), transparent 22%),
+    radial-gradient(circle at bottom right, var(--theme-horizon), transparent 28%),
+    linear-gradient(180deg, #f2dfbf 0%, #d9b88c 35%, #bf8e5f 100%);
+  transition: background 500ms ease;
+}
+
+body[data-season="spring"] {
+  --theme-glow: rgba(186, 218, 164, 0.55);
+  --theme-horizon: rgba(229, 171, 152, 0.24);
+}
+
+body[data-season="summer"] {
+  --theme-glow: rgba(255, 205, 103, 0.62);
+  --theme-horizon: rgba(214, 112, 52, 0.3);
+}
+
+body[data-season="autumn"] {
+  --theme-glow: rgba(236, 155, 80, 0.58);
+  --theme-horizon: rgba(135, 67, 42, 0.3);
+}
+
+body[data-season="winter"] {
+  --theme-glow: rgba(176, 202, 221, 0.55);
+  --theme-horizon: rgba(109, 135, 163, 0.25);
+}
+
+body[data-time="night"] {
+  --theme-glow: rgba(63, 66, 104, 0.34);
+  --theme-horizon: rgba(27, 38, 67, 0.28);
+}
+
+body[data-weather="rain"] {
+  --theme-glow: rgba(119, 161, 179, 0.48);
+  --theme-horizon: rgba(65, 92, 113, 0.3);
+}
+
+body[data-weather="clear"] {
+  --theme-glow: rgba(255, 207, 114, 0.62);
+}
+
+body[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f0dfc9;
+  --muted: #d3bea3;
+  --paper: #1d1b1a;
+  --surface: #282421;
+  --surface-strong: #3a322b;
+  background:
+    radial-gradient(circle at top left, rgba(144, 91, 48, 0.2), transparent 24%),
+    linear-gradient(180deg, #171615, #211d19 55%, #302319);
+  color: #f1e4d3;
+}
+
+body[data-theme="dark"] .stat-card,
+body[data-theme="dark"] .panel,
+body[data-theme="dark"] .analytics-card,
+body[data-theme="dark"] .recommendation-card {
+  border-color: rgba(222, 187, 149, 0.2);
+  background: rgba(43, 38, 33, 0.94);
+  color: #f1e4d3;
+}
+
+body[data-theme="dark"] .muted,
+body[data-theme="dark"] .stat-label,
+body[data-theme="dark"] .stat-foot,
+body[data-theme="dark"] .analytics-card span,
+body[data-theme="dark"] .record-copy span,
+body[data-theme="dark"] .achievement-copy span {
+  color: #c9b69f;
+}
+
+body[data-theme="dark"] .input,
+body[data-theme="dark"] .activity-metric,
+body[data-theme="dark"] .record-row,
+body[data-theme="dark"] .achievement-card,
+body[data-theme="dark"] .weight-row {
+  border-color: rgba(222, 187, 149, 0.24);
+  background: #332d27;
+  color: #f1e4d3;
+}
+
+body[data-theme="dark"] .analytics-card strong,
+body[data-theme="dark"] .activity-metric>strong,
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] .record-copy strong,
+body[data-theme="dark"] .achievement-copy strong,
+body[data-theme="dark"] .goal-progress-heading {
+  color: #f1e4d3;
+}
+
+.quote-card {
+  margin: 16px 0;
+  padding: 20px 24px;
+  border: 1px solid rgba(132, 83, 43, 0.35);
+  border-radius: 16px;
+  background: linear-gradient(120deg, rgba(255, 246, 225, 0.94), rgba(231, 199, 155, 0.82));
+  box-shadow: 0 16px 28px rgba(90, 60, 39, 0.1);
+}
+
+.quote-card blockquote {
+  margin: 0;
+  font: 700 clamp(16px, 2vw, 22px)/1.45 "Manrope", sans-serif;
+}
+
+.quote-kind {
+  margin: 10px 0 0;
+  color: #7c5738;
+  font-size: 11px;
+}
+
+body[data-theme="dark"] .quote-card {
+  border-color: rgba(222, 187, 149, 0.2);
+  background: linear-gradient(120deg, #332d27, #282421);
+}
+
+body[data-theme="dark"] .quote-kind {
+  color: #d1b999;
+}

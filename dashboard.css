@@ -1,0 +1,379 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.stat-card,
+.panel {
+  border: 1px solid rgba(110, 75, 47, 0.32);
+  border-radius: var(--radius);
+  background: rgba(255, 247, 234, 0.88);
+  color: #3c2b1d;
+  box-shadow: 0 18px 32px rgba(90, 60, 39, 0.12);
+}
+
+.stat-card {
+  min-height: 153px;
+  padding: 17px 18px;
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 13px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.mint {
+  background: #e8f4ec;
+  color: #27754f;
+}
+
+.lavender {
+  background: #f0ecfb;
+  color: #7562aa;
+}
+
+.peach {
+  background: #fff1e9;
+  color: #b8744b;
+}
+
+.sky {
+  background: #eaf3f8;
+  color: #4c829b;
+}
+
+.stat-label,
+.stat-foot {
+  display: block;
+  margin-bottom: 5px;
+  color: #5b4733;
+  font-size: 11px;
+}
+
+.stat-card>strong {
+  display: block;
+  margin: 1px 0 4px;
+  font-size: 25px;
+  letter-spacing: -0.7px;
+}
+
+.stat-card>strong small {
+  color: #5b4733;
+  font: 500 11px "DM Sans", sans-serif;
+  letter-spacing: 0;
+}
+
+.summary-switch {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(255, 247, 234, 0.68);
+  border: 1px solid rgba(111, 77, 50, 0.3);
+}
+
+.summary-chip {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #4b3726;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.summary-chip.active {
+  background: #d98b4c;
+  color: #2f2015;
+  box-shadow: inset 0 0 0 1px rgba(113, 62, 26, 0.22);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 16px;
+}
+
+.panel {
+  padding: 23px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.text-button {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #8d4515;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.text-button:hover {
+  text-decoration: underline;
+}
+
+.wellness-grid,
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.wellness-card,
+.quick-card {
+  min-height: 120px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid rgba(130, 95, 68, 0.38);
+  border-radius: 13px;
+  background: rgba(239, 218, 189, 0.66);
+  color: var(--ink);
+  text-align: left;
+}
+
+.wellness-card:hover,
+.quick-card:hover {
+  border-color: rgba(247, 180, 112, 0.8);
+  background: rgba(255, 232, 199, 0.94);
+}
+
+.wellness-card strong,
+.quick-card strong {
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.wellness-card>span:last-child,
+.quick-card>span:last-child {
+  color: #5b4733;
+  font-size: 11px;
+}
+
+.exercise-emoji,
+.wellness-emoji {
+  font-size: 20px;
+}
+
+.workout-list,
+.history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.workout-list {
+  gap: 9px;
+}
+
+.workout-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.workout-row+.workout-row {
+  padding-top: 10px;
+  border-top: 1px solid rgba(91, 71, 51, 0.2);
+}
+
+.workout-dot {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 11px;
+  background: #f1d8b8;
+  color: #793f1a;
+  font-size: 16px;
+}
+
+.workout-row-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.workout-row-copy strong {
+  display: block;
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.workout-row-copy span,
+.workout-date {
+  color: #5b4733;
+  font-size: 10px;
+}
+
+.workout-date {
+  white-space: nowrap;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 20px 10px;
+  color: #5b4733;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.notice-card {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 17px;
+  border: 1px solid rgba(132, 83, 43, 0.35);
+  border-radius: 13px;
+  background: rgba(255, 247, 234, 0.78);
+  color: #463221;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.recommendation-card {
+  margin: 14px 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(123, 80, 43, 0.32);
+  border-radius: 15px;
+  background: rgba(255, 247, 234, 0.76);
+}
+
+.recommendation-card p:last-child {
+  margin-bottom: 0;
+}
+
+.notice-card p {
+  margin: 0;
+}
+
+.notice-card strong {
+  color: #7c411a;
+}
+
+.notice-icon {
+  color: #994e1c;
+  font-size: 18px;
+}
+
+.activity-tracker {
+  margin: 0 0 18px;
+}
+
+.activity-tracker .section-heading {
+  margin-bottom: 10px;
+}
+
+.activity-tracker .live-badge {
+  color: #594633;
+}
+
+.activity-tracker>.muted {
+  margin-bottom: 15px;
+}
+
+.activity-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.activity-mode {
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid rgba(112, 78, 51, 0.38);
+  border-radius: 999px;
+  background: #f1dfc8;
+  color: #493521;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.activity-mode.active {
+  border-color: #9a531f;
+  background: #d98b4c;
+  color: #2f2015;
+}
+
+.activity-mode:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.activity-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.activity-metric {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(112, 78, 51, 0.22);
+  border-radius: 14px;
+  background: #f5e8d5;
+}
+
+.activity-metric>span {
+  display: block;
+  margin-bottom: 6px;
+  color: #654d34;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.activity-metric>strong {
+  color: #38281b;
+  font-size: clamp(18px, 3vw, 25px);
+  line-height: 1.15;
+}
+
+.activity-metric small {
+  color: #5b4733;
+  font: 600 11px "DM Sans", sans-serif;
+}
+
+.activity-status {
+  min-height: 35px;
+  margin: 12px 0;
+  color: #4b3826;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.activity-status.error {
+  color: #a52e20;
+}
+
+.activity-status.success {
+  color: #28683f;
+}
+
+.activity-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+

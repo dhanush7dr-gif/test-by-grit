@@ -1,0 +1,99 @@
+.records-list,
+.achievements-list,
+.weight-history {
+  display: grid;
+  gap: 9px;
+}
+
+.record-row,
+.achievement-card,
+.weight-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(130, 95, 68, 0.26);
+  border-radius: 12px;
+  background: rgba(239, 218, 189, 0.52);
+}
+
+.record-copy,
+.achievement-copy {
+  min-width: 0;
+}
+
+.record-copy strong,
+.achievement-copy strong {
+  display: block;
+  font-size: 12px;
+}
+
+.record-copy span,
+.achievement-copy span,
+.weight-row {
+  color: #5b4733;
+  font-size: 10px;
+}
+
+.achievement-card[data-unlocked="true"] {
+  border-color: rgba(142, 94, 37, 0.58);
+  background: linear-gradient(120deg, rgba(255, 227, 181, 0.86), rgba(241, 216, 177, 0.75));
+}
+
+.achievement-card[data-rarity="rare"] {
+  box-shadow: inset 3px 0 #5f83ae;
+}
+
+.achievement-card[data-rarity="epic"] {
+  box-shadow: inset 3px 0 #8e64af;
+}
+
+.achievement-card[data-rarity="legendary"] {
+  box-shadow: inset 3px 0 #c4862d;
+}
+
+.achievement-progress {
+  width: 100%;
+  height: 7px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(85, 67, 45, 0.15);
+}
+
+.achievement-progress>span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #bd7136, #e4ad55);
+}
+
+.achievement-badge {
+  flex: 0 0 auto;
+  font-size: 20px;
+}
+
+.data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 12px 0 18px;
+}
+
+.data-actions .button {
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 10px;
+}
+
+.import-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.subheading {
+  margin: 18px 0 8px;
+  font-size: 13px;
+}
